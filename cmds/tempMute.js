@@ -1,4 +1,5 @@
 const discord = require("discord.js");
+const ms = require("ms");
 
 module.exports.run = async (client, message, args) => {
 
@@ -22,8 +23,15 @@ module.exports.run = async (client, message, args) => {
     if(!muteTime) return message.reply("Geen tijd opgegeven! in uren, minuten of seconden");
 
     await(muteUser.roles.add(muteRole.id));
-    message.reply(`${muteUser} is gemute voor ${muteTime}`);
+    message.channel.send(`${muteUser} is gemute voor ${muteTime}`);
 
+    setTimeout(() => {
+        
+        muteUser.roles.remove(muteRole.id)
+        
+        message.reply(`${muteUser} is geunmute.`)
+
+    }, ms(muteTime));
 
 }
 
