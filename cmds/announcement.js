@@ -19,6 +19,10 @@ module.exports.run = async(client, message, args) => {
 
     }
 
+    var argsList = args.join(" ").split(seperator);
+
+    console.log(argsList);
+
 }
 
 module.exports.help = {
