@@ -2,19 +2,15 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("sorry jij kan dit niet");
+    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Sorry jij kan dit niet");
 
     if (!args[0]) return message.reply("Geen gebruiker opgegeven.");
-
-    if (!args[1]) return message.reply("Gelieve een redenen op te geven.");
 
     if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Bot heeft geen perms");
 
     var muteUser = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
 
     if (!muteUser) return message.reply("Kan de gebruiker niet vinden.");
-
-    var reason = args.slice(1).join(" ");
 
     if (muteUser.hasPermission("MANAGE_GUILD")) return message.reply("Ben je gek? Ik kan niet een Admin muten!");
 
