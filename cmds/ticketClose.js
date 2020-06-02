@@ -28,7 +28,7 @@ module.exports.run = async (client, message, args) => {
     var user = client.users.cache.find(a => a.username === username);
     if (user) user.send(embedCreateTicket)
 
-    message.author.send(embedCreateTicket);
+    message.member.send(embedCreateTicket);
 
 }
 
