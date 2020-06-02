@@ -46,6 +46,7 @@ module.exports.run = async (client, message, args) => {
                         ATTACH_FILES: true,
                         ADD_REACTIONS: true,
                         CONNECT: true,
+                        VIEW_CHANNEL: true
                     });
 
                     var embadParent = new discord.MessageEmbed()
