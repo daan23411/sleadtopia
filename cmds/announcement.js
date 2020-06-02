@@ -37,7 +37,8 @@ module.exports.run = async (client, message, args) => {
         .setTitle("Announcement!")
         .setColor(options.kleur)
         .setDescription(`Bericht van ${message.author} \n\n **${options.titel}** \n\n ${options.bericht}`)
-        .setTimestamp();
+        .setTimestamp()
+        .setFooter("© daan2341, 2020 - 2021");
 
         var channel = message.member.guild.channels.cache.find(channels => channels.name === options.kanaal);
         if(!channel) return message.reply("Dit kanaal bestaat niet!");
