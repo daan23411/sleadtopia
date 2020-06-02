@@ -26,7 +26,7 @@ module.exports.run = async (client, message, args) => {
     if (message.author.bot) return;
     if (message.channel.type === "dm") return;
 
-    ticketChannel.send(embedCreateTicket);
+    message.author.send(embedCreateTicket);
 
 }
 
