@@ -34,7 +34,7 @@ module.exports.run = async (client, message, args) => {
             createdChannel.setParent(categoryID).then(
                 (settedParent) => {
 
-                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@everyone'),{
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@everyone'), {
                         SEND_MESSAGES: false,
                         VIEW_CHANNEL: false
                     });
@@ -49,10 +49,20 @@ module.exports.run = async (client, message, args) => {
                         VIEW_CHANNEL: true
                     });
 
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === 'Support Team'), {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        ADD_REACTIONS: true,
+                        CONNECT: true,
+                        VIEW_CHANNEL: true
+                    });
+
                     var embadParent = new discord.MessageEmbed()
-                    .setTitle(`Hoi ${message.author.username}`)
-                    .setDescription("Zet hier je vraag / bericht aan het staffteam")
-                    .setFooter("© daan2341, 2020 - 2021");
+                        .setTitle(`Hoi ${message.author.username}`)
+                        .setDescription("Zet hier je vraag / bericht aan het staffteam")
+                        .setFooter("© daan2341, 2020 - 2021");
 
                     settedParent.send(embadParent);
 
