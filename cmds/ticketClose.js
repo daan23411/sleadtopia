@@ -6,8 +6,6 @@ module.exports.run = async (client, message, args) => {
 
     if (!message.member.hasPermission("KICK_MEMBER")) return message.reply("Jij kan dit niet! Vraag een admin om je ticket te closen!");
 
-    var username = message.channel.split('-')[0];
-
     if (message.channel.parentID == categoryID) {
         message.channel.delete();
     } else {
