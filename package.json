@@ -1,0 +1,16 @@
+{
+  "name": "discord_bot_sleadtopia",
+  "version": "1.0.0",
+  "description": "DIscord Bot voor SleadTopia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "author": "@daan2341#2638",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  },
+  "devDependencies": {}
+}
