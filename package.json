@@ -4,8 +4,7 @@
   "description": "DIscord Bot voor SleadTopia",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "@daan2341#2638",
   "license": "ISC",
