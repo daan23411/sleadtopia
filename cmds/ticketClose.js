@@ -16,6 +16,7 @@ module.exports.run = async (client, message, args) => {
 
     var embedCreateTicket = new discord.MessageEmbed()
         .setTitle("Ticket " + message.channel.name)
+        .setColor("AQUA")
         .setDescription("Het ticket is gemarkeerd als **compleet**. Als je nog vragen hebt of niet tevreden bent twijfel dan niet en maak nog een ticket aan!")
         .setFooter("© daan2341, 2020 - 2021");
 
