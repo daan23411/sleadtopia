@@ -21,8 +21,8 @@ module.exports.run = async (client, message, args) => {
 
     var argsList = args.join(" ").split(seperator);
 
-    if (argsList[2] == undefined) argsList[2] == "#eeeeee"
-    if (argsList[3] == undefined) argsList[3] == "#algemeen"
+    if (argsList[2] == undefined) argsList[2] = "#eeeeee"
+    if (argsList[3] == undefined) argsList[3] = "#algemeen"
 
     var options = {
 
