@@ -21,7 +21,14 @@ module.exports.run = async(client, message, args) => {
 
     var argsList = args.join(" ").split(seperator);
 
-    console.log(argsList);
+    var options = {
+
+        titel: argsList[0],
+        bericht: argsList[1] || "Geen bericht geplaatst",
+        kleur: argsList[2].trim(),
+        kanaal: argsList[3].trim()
+
+    }
 
 }
 
