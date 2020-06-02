@@ -6,6 +6,8 @@ module.exports.run = async (client, message, args) => {
 
     if (!message.member.hasPermission("KICK_MEMBER")) return message.reply("Jij kan dit niet! Vraag een admin om je ticket te closen!");
 
+    var username = message.channel.split('-')[0];
+
     if (message.channel.parentID == categoryID) {
         message.channel.delete();
     } else {
@@ -23,8 +25,8 @@ module.exports.run = async (client, message, args) => {
     var ticketChannel = message.member.guild.channels.cache.find(channel => channel.name === "logs");
     if (!ticketChannel) return message.reply("Kanaal bestaat niet!");
 
-    if (message.author.bot) return;
-    if (message.channel.type === "dm") return;
+    var user = client.users.cache.find(a => a.username === username);
+    if (user) user.send(embedCreateTicket)
 
     message.author.send(embedCreateTicket);
 
