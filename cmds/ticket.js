@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
 
     var ticketBestaat = false;
 
-    message.guild.channels.cache.array.forEach(channel => {
+    message.guild.channels.cache.forEach(channel => {
 
         if (channel.name == userName.toLowerCase() + "-" + userDisciminator) {
             ticketBestaat = true;
@@ -53,7 +53,7 @@ module.exports.run = async (client, message, args) => {
                     .setDescription("Zet hier je vraag / bericht aan het staffteam")
                     .setFooter("© daan2341, 2020 - 2021");
 
-                    settedParent.channel.send(embadParent);
+                    settedParent.send(embadParent);
 
                 }
             ).catch(err => {
