@@ -24,7 +24,7 @@ if(jsFiles.length <= 0)  {
 
 jsFiles.forEach((f, i) => {
 
-    var fileGet = require(`./cmds/${f}`);
+    var fileGet = require(`./cmds/Tickets/${f}`, `./cmds/General/${f}`, `./cmds/Admin/${f}`, `./cmds/Moderation/${f}`);
     console.log(`De file ${f} zijn geladen!`);
 
     client.commands.set(fileGet.help.name, fileGet);
