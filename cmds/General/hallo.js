@@ -7,5 +7,9 @@ module.exports.run = async(client, message, args) => {
 }
 
 module.exports.help = {
-    name: "hallo"
+    name: "hallo",
+    alaises: ["hi"],
+    category: "General",
+    description: "Stuurt een leuk bericht terug",
+    usage: "[command | alais]",
 }

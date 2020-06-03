@@ -6,6 +6,8 @@ const fs = require("fs");
 const client = new discord.Client();
 client.commands = new discord.Collection();
 
+client.categories = fs.readdirSync("./cmds/");
+
 fs.readdir("./cmds/", (err, files) => {
 
 if(err) console.log(err);
