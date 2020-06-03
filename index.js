@@ -21,7 +21,7 @@ if(jsFiles.length <= 0)  {
 
 jsFiles.forEach((f, i) => {
 
-    var fileGet = require(`./cmds/${f}`);
+    
     console.log(`De file ${f} zijn geladen!`);
 
     client.commands.set(fileGet.help.name, fileGet);
