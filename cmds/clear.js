@@ -10,9 +10,9 @@ module.exports.run = async (client, message, args) => {
 
     if (Number.isInteger(parseInt(args[0]))) {
 
-        var amount = parseInt(args[0] + 1);
+        var aantal = parseInt(args[0] + 1);
 
-        message.channel.bulkDelete(amount).then(() => {
+        message.channel.bulkDelete(aantal).then(() => {
 
             if (args[0] <= 0) {
                 message.reply("Ben je gek? Ik kan toch geen 0 berichten verwijderen!?").then(msg => msg.delete({ timeout: 3000 }));
