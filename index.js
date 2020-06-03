@@ -6,7 +6,16 @@ const fs = require("fs");
 const client = new discord.Client();
 client.commands = new discord.Collection();
 
-client.categories = fs.readdirSync("./cmds/");
+fs.readdir("./cmds/admin", (err, files) => {
+
+fs.readdir("./cmds/General", (err, files) => {
+
+fs.readdir("./cmds/Moderation", (err, files) => {
+
+fs.readdir("./cmds/Tickets", (err, files) => {
+if(err) console.log(err);
+
+var jsFiles = files.filter(f => f.split(".").pop() === "js");
 
 if(jsFiles.length <= 0)  {
     console.log("Kon geen files vinden");
@@ -15,12 +24,15 @@ if(jsFiles.length <= 0)  {
 
 jsFiles.forEach((f, i) => {
 
-    
+    var fileGet = require(`./cmds/${f}`);
     console.log(`De file ${f} zijn geladen!`);
 
     client.commands.set(fileGet.help.name, fileGet);
 
 })
+}
+
+);
 
 
 client.on("guildMemberAdd", member =>{
@@ -69,4 +81,4 @@ var commands = client.commands.get(command.slice(prefix.length));
 
 if(commands) commands.run(client, message, args);
 
-});
+})})})});
