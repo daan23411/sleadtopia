@@ -8,10 +8,6 @@ client.commands = new discord.Collection();
 
 client.categories = fs.readdirSync("./cmds/");
 
-
-
-if(err) console.log(err);
-
 var jsFiles = files.filter(f => f.split(".").pop() === "js");
 
 if(jsFiles.length <= 0)  {
