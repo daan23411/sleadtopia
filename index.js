@@ -8,8 +8,6 @@ client.commands = new discord.Collection();
 
 client.categories = fs.readdirSync("./cmds/");
 
-var jsFiles = files.filter(f => f.split(".").pop() === "js");
-
 if(jsFiles.length <= 0)  {
     console.log("Kon geen files vinden");
     return;
