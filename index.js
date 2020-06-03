@@ -8,7 +8,7 @@ client.commands = new discord.Collection();
 
 client.categories = fs.readdirSync("./cmds/");
 
-fs.readdir("./cmds/", (err, files) => {
+
 
 if(err) console.log(err);
 
@@ -27,8 +27,6 @@ jsFiles.forEach((f, i) => {
     client.commands.set(fileGet.help.name, fileGet);
 
 })
-
-});
 
 
 client.on("guildMemberAdd", member =>{
